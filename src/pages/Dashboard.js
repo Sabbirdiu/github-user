@@ -1,15 +1,27 @@
 import React from "react";
 import { Info, Repos, User, Search, Navbar } from "../components";
-
+import loadingImage from "../images/preloader.gif";
+import { GithubContext } from "../context/context";
 const Dashboard = () => {
+  const { isLoading } = React.useContext(GithubContext);
+  if (isLoading) {
+    return (
+      <main>
+        <Navbar />
+        <Search />
+        <img src={loadingImage} className="loading-img" alt="loding" />
+        <h1>loading.....</h1>
+      </main>
+    );
+  }
   return (
-    <div>
+    <main>
       <Navbar></Navbar>
-      <Search></Search>
+      <Search />
       <Info />
       <User />
       <Repos />
-    </div>
+    </main>
   );
 };
 
