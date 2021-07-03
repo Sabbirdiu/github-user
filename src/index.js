@@ -5,11 +5,19 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { GithubProvider } from "./context/context";
 
+// dev-04d2z9oo.us.auth0.com
+// 81UVcPjO8TtHKkqB2aq1QwsXLjsgrRtQ
 ReactDOM.render(
   <React.StrictMode>
-    <GithubProvider>
-      <App />
-    </GithubProvider>
+    <Auth0Provider
+      domain="dev-04d2z9oo.us.auth0.com"
+      clientId="81UVcPjO8TtHKkqB2aq1QwsXLjsgrRtQ"
+      redirectUri={window.location.origin}
+    >
+      <GithubProvider>
+        <App />
+      </GithubProvider>
+    </Auth0Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
