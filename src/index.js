@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { GithubProvider } from "./context/context";
-
+import { Auth0Provider } from "@auth0/auth0-react";
 // dev-04d2z9oo.us.auth0.com
 // 81UVcPjO8TtHKkqB2aq1QwsXLjsgrRtQ
 ReactDOM.render(
@@ -13,6 +13,7 @@ ReactDOM.render(
       domain="dev-04d2z9oo.us.auth0.com"
       clientId="81UVcPjO8TtHKkqB2aq1QwsXLjsgrRtQ"
       redirectUri={window.location.origin}
+      cacheLocation="localstorage"
     >
       <GithubProvider>
         <App />

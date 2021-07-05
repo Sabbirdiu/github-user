@@ -1,12 +1,16 @@
 import React from "react";
 import styled from "styled-components";
+import { useAuth0 } from "@auth0/auth0-react";
 const Login = () => {
+  const { loginWithRedirect } = useAuth0();
   return (
     <Wrapper>
       <div className="container">
         <img alt="github user" />
         <h1>github user</h1>
-        <button className="btn">Log In / Sign Up</button>
+        <button className="btn" onClick={loginWithRedirect}>
+          Log In / Sign Up
+        </button>
       </div>
     </Wrapper>
   );
